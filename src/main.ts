@@ -16,13 +16,18 @@ const p2pPort: number = parseInt(process.env.P2P_PORT) || 6001;
 const initHttpServer = (myHttpPort: number) => {
     const app = express();
     app.use(bodyParser.json());
-
+    
     app.use((err, req, res, next) => {
         if (err) {
             res.status(400).send(err.message);
         }
     });
-
+    
+    app.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+      });
     app.get('/blocks', (req, res) => {
         res.send(getBlockchain());
     });

@@ -1,7 +1,10 @@
-# Naivecoin
+# PTC blockchain
+Author: Nguyen Van Tan Phong
+Student ID: 19127646
 
-The repository for the naivecoin tutorial: https://lhartikk.github.io/
 
+
+## How to start
 ```
 npm install
 npm start
@@ -50,3 +53,7 @@ curl -H "Content-type:application/json" --data '{"peer" : "ws://localhost:6001"}
 ```
 curl http://localhost:3001/peers
 ```
+
+## Reference
+
+https://lhartikk.github.io/
